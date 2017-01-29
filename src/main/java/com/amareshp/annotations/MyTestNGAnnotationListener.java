@@ -1,13 +1,6 @@
 package com.amareshp.annotations;
 
-import java.lang.reflect.Method;
-
-import org.testng.IInvokedMethod;
-import org.testng.IInvokedMethodListener;
-import org.testng.ITestContext;
-import org.testng.ITestListener;
-import org.testng.ITestNGMethod;
-import org.testng.ITestResult;
+import org.testng.*;
 
 /**
  * The listener interface for receiving MyTestNGAnnotation events.
@@ -18,7 +11,7 @@ import org.testng.ITestResult;
  *
  * @see MyTestNGAnnotation
  */
-public class MyTestNGAnnotationListener implements IInvokedMethodListener, ITestListener  {
+public class MyTestNGAnnotationListener implements IInvokedMethodListener, ITestListener, ISuiteListener  {
     
     String name = null;
     String city = null;
@@ -97,6 +90,14 @@ public class MyTestNGAnnotationListener implements IInvokedMethodListener, ITest
         // TODO Auto-generated method stub
         
     }
-    
 
+
+    @Override
+    public void onStart(ISuite iSuite) {
+    }
+
+    @Override
+    public void onFinish(ISuite iSuite) {
+
+    }
 }
